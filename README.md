@@ -85,11 +85,3 @@ To use the error handling architecture, you need to do the following:
 ## Conclusion
 
 The Lego and color architecture is a simple, easy-to-use front-end architecture that is designed to be independent of any particular framework and to follow the SOLID principles of object-oriented design. Its modular design and color-coded folder structure make it easy to read, write, test, and extend, making it a powerful tool for building scalable and maintainable front
-
-```
-
-```
-
-```
-
-```
