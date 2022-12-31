@@ -1,4 +1,4 @@
-import { TypedError } from "@red/Types/ErrorTypes/error.type";
+import { TypedError } from "@yellow/ErrorTypes/error.type";
 
 export interface IErrorHandler {
   handleError(error: TypedError): void;

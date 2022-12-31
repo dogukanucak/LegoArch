@@ -25,6 +25,8 @@ const config = {
   },
   moduleNameMapper: {
     "@red/(.*)": "<rootDir>/src/red/$1",
+    "@green/(.*)": "<rootDir>/src/green/$1",
+    "@yellow/(.*)": "<rootDir>/src/yellow/$1",
   },
 };
 

@@ -1,6 +1,6 @@
-import { IErrorHandler } from "@red/Interfaces/IErrorHandler";
-import { ErrorType, TypedError } from "@red/Types/ErrorTypes/error.type";
-import { hasErrorType } from "@red/Utility/error.utility";
+import { IErrorHandler } from "@yellow/Interfaces/IErrorHandler";
+import { ErrorType, TypedError } from "@yellow/ErrorTypes/error.type";
+import { hasErrorType } from "@yellow/Utility/error.utility";
 
 export class UIErrorHandler implements IErrorHandler {
   private next: IErrorHandler | null = null;

@@ -1,6 +1,6 @@
-import { ErrorType, TypedError } from "@red/Types/ErrorTypes/error.type";
+import { ErrorType, TypedError } from "@yellow/ErrorTypes/error.type";
 import { UIErrorHandler } from "./UIErrorHandler";
-import { IErrorHandler } from "@red/Interfaces/IErrorHandler";
+import { IErrorHandler } from "@yellow/Interfaces/IErrorHandler";
 
 const mockHandleErrorMethod = jest.fn();
 
