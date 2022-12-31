@@ -1,0 +1,20 @@
+import { DependencyContainer } from '@/red/DependencyContainer';
+import { ErrorHandler } from '@/yellow/ErrorHandler';
+import { NetworkErrorHandler } from '@/green/NetworkErrorHandler';
+import { UIErrorHandler } from '@/blue/UIErrorHandler';
+
+// Register the error handlers with the dependency container
+DependencyContainer.registerSingleton(ErrorHandler, NetworkErrorHandler);
+DependencyContainer.registerSingleton(ErrorHandler, UIErrorHandler);
+
+// Inject the error handler instances
+const networkErrorHandler = DependencyContainer.resolve(NetworkErrorHandler);
+const uiErrorHandler = DependencyContainer.resolve(UIErrorHandler);
+
+// Set the next error handler for each error handler
+networkErrorHandler.setNext(uiErrorHandler);
+uiErrorHandler.setNext(null);
+
+// Handle an error
+const error = new Error('Network error');
+networkErrorHandler.handleError(error);
