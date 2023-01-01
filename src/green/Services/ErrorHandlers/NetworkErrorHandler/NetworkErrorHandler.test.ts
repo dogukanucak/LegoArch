@@ -1,4 +1,4 @@
-import { ErrorType, TypedError } from "@yellow/ErrorTypes/error.type";
+import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
 import { IErrorHandler } from "@yellow/Interfaces/IErrorHandler";
 import { NetworkErrorHandler } from "./NetworkErrorHandler";
 import { NetworkErrorHandlerConstants } from "./constants";

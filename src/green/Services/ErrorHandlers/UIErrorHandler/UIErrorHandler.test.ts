@@ -1,4 +1,4 @@
-import { ErrorType, TypedError } from "@yellow/ErrorTypes/error.type";
+import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
 import { UIErrorHandler } from "./UIErrorHandler";
 import { IErrorHandler } from "@yellow/Interfaces/IErrorHandler";
 
