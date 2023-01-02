@@ -1,0 +1,16 @@
+const testHTTPClient = () => {
+  const httpClient = new HttpClient(new AxiosAdapter());
+  const config: HttpRequestConfig = {
+    method: HttpMethod.GET,
+    url: "https://jsonplaceholder.typicode.com/todos/1",
+  };
+
+  httpClient
+    .request(config)
+    .then((response) => {
+      console.log("Response: ", response.data);
+    })
+    .catch((error) => {
+      console.log("Error: ", error);
+    });
+};
