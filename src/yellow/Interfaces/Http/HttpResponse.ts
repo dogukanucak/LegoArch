@@ -5,6 +5,6 @@ export interface HttpResponse<T = object | string> {
   status: number;
   statusText: string;
   headers: Record<string, string>;
-  config: HttpRequestConfig;
+  config?: HttpRequestConfig;
   request?: XMLHttpRequest;
 }
