@@ -1,9 +1,25 @@
+
+class TestMiddleWare implements IHttpMiddleware {
+  handleRequest(config: HttpRequestConfig<string | object>): Promise<HttpRequestConfig<string | object>> {
+    console.log("Can handle request!");
+    return Promise.resolve(config);
+  }
+  handleResponse(response: HttpResponse<string | object>): Promise<HttpResponse<string | object>> {
+    console.log("Can handle response");
+    return Promise.resolve(response);
+  }
+}
+
 const testHTTPClient = () => {
+  const handler = new NetworkErrorHandler();
+
   const httpClient = new HttpClient(new RxJsAdapter());
   const config: HttpRequestConfig = {
     method: HttpMethod.GET,
-    url: "https://jsonplaceholder.typicode.com/todos/1",
+    url: "https://jsonplaceholder.typicode.com/todosError/1",
   };
+
+  httpClient.useMiddleware(new TestMiddleWare());
 
   httpClient
     .request(config)
@@ -12,5 +28,6 @@ const testHTTPClient = () => {
     })
     .catch((error) => {
       console.log("Error: ", error);
+      handler.handleError(error);
     });
 };

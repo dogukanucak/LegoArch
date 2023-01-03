@@ -1,4 +1,6 @@
 import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpClient, IHttpMiddleware } from "@yellow/Interfaces/Http";
+import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
+import { throwError } from "rxjs";
 
 export class HttpClient implements IHttpClient {
   private adapter: IHttpAdapter;
@@ -15,19 +17,28 @@ export class HttpClient implements IHttpClient {
   }
 
   public async request(config: HttpRequestConfig): Promise<HttpResponse> {
-    // Apply request middlewares
-    for (const middleware of this.middlewares) {
-      config = await middleware.handleRequest(config);
+    try {
+      // Apply request middlewares
+      for (const middleware of this.middlewares) {
+        config = await middleware.handleRequest(config);
+      }
+
+      // Send request
+      let response = await this.adapter.request(config);
+
+      // Apply response middlewares
+      for (const middleware of this.middlewares) {
+        response = await middleware.handleResponse(response);
+      }
+
+      return response;
+    } catch (error: unknown) {
+      // Catch error and redirect as network error
+      if (error instanceof Error) {
+        const networkError: TypedError = { ...error, ...{ types: [ErrorType.NetworkError] } };
+
+        throw networkError;
+      }
     }
-
-    // Send request
-    let response = await this.adapter.request(config);
-
-    // Apply response middlewares
-    for (const middleware of this.middlewares) {
-      response = await middleware.handleResponse(response);
-    }
-
-    return response;
   }
 }
