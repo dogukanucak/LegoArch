@@ -2,6 +2,10 @@ import { NetworkErrorHandler } from "@green/Services/ErrorHandlers/NetworkErrorH
 import { AxiosAdapter } from "@green/Services/Http/Adapters/Axios/AxiosAdapter";
 import { RxJsAdapter } from "@green/Services/Http/Adapters/RxJSAdapter/RxJsAdapter";
 import { HttpClient } from "@green/Services/Http/HttpClient";
+import { ConsoleLogger } from "@green/Services/Logger/ConsoleLogger";
+import { FileLogger } from "@green/Services/Logger/FileLogger";
+import { LogLevel } from "@red/Types/Logger/LogType";
+import { Logger } from "@yellow/Abstractions/Logger/Logger";
 import { HttpRequestConfig, HttpResponse, IHttpMiddleware } from "@yellow/Interfaces/Http";
 import { HttpMethod } from "@yellow/Interfaces/Http/enums/HttpMethod.enum";
 import * as React from "react";
@@ -39,8 +43,17 @@ const testHTTPClient = () => {
     });
 };
 
+const testLogger = () => {
+  const logSubject = new Logger();
+  logSubject.attach(new ConsoleLogger());
+  logSubject.attach(new FileLogger(""));
+
+  logSubject.write({ level: LogLevel.ERROR, message: "HEY TEST THIS LOG MESSAGE" });
+};
+
 const App: React.FC = () => {
-  testHTTPClient();
+  //testHTTPClient();
+  testLogger();
   return (
     <div>
       <h1>Hello World!</h1>

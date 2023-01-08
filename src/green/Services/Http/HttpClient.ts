@@ -1,6 +1,5 @@
 import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpClient, IHttpMiddleware } from "@yellow/Interfaces/Http";
 import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
-import { throwError } from "rxjs";
 
 export class HttpClient implements IHttpClient {
   private adapter: IHttpAdapter;
