@@ -52,8 +52,6 @@ const testLogger = () => {
 };
 
 const App: React.FC = () => {
-  //testHTTPClient();
-  testLogger();
   return (
     <div>
       <h1>Hello World!</h1>
