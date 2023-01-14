@@ -31,13 +31,11 @@ export class HttpClient implements IHttpClient {
       }
 
       return response;
-    } catch (error: unknown) {
+    } catch (error: any) {
       // Catch error and redirect as network error
-      if (error instanceof Error) {
-        const networkError: TypedError = { ...error, ...{ types: [ErrorType.NetworkError] } };
+      const networkError: TypedError = { ...error, ...{ types: [ErrorType.NetworkError] } };
 
-        throw networkError;
-      }
+      throw networkError;
     }
   }
 }

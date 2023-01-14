@@ -1,7 +1,7 @@
 import { HttpRequestConfig, HttpResponse, IHttpAdapter } from "@yellow/Interfaces/Http";
-import { Observable, firstValueFrom, throwError } from "rxjs";
+import { Observable, firstValueFrom } from "rxjs";
 import { AjaxConfig, ajax } from "rxjs/ajax";
-import { catchError, map } from "rxjs/operators";
+import { map } from "rxjs/operators";
 
 export class RxJsAdapter implements IHttpAdapter {
   request<T = string | object>(config: HttpRequestConfig<string | object>): Promise<HttpResponse<T>> {
