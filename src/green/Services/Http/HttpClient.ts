@@ -1,11 +1,14 @@
+import { HTTP_TOKENS } from "@red/IoC/Tokens/Http.token";
 import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpClient, IHttpMiddleware } from "@yellow/Interfaces/Http";
 import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
+import { inject, injectable } from "inversify";
 
+@injectable()
 export class HttpClient implements IHttpClient {
   private adapter: IHttpAdapter;
   private middlewares: IHttpMiddleware[] = [];
 
-  constructor(adapter: IHttpAdapter) {
+  constructor(@inject(HTTP_TOKENS.HttpAdapter) adapter: IHttpAdapter) {
     this.adapter = adapter;
   }
 

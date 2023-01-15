@@ -1,8 +1,10 @@
 import { HttpRequestConfig, HttpResponse, IHttpAdapter } from "@yellow/Interfaces/Http";
+import { injectable } from "inversify";
 import { Observable, firstValueFrom } from "rxjs";
 import { AjaxConfig, ajax } from "rxjs/ajax";
 import { map } from "rxjs/operators";
 
+@injectable()
 export class RxJsAdapter implements IHttpAdapter {
   request<T = string | object>(config: HttpRequestConfig<string | object>): Promise<HttpResponse<T>> {
     const ajaxConfig: AjaxConfig = {

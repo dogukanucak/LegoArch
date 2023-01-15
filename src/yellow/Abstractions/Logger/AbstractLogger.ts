@@ -1,6 +1,8 @@
 import { Log } from "@red/Types/Logger/LogType";
 import { ILoggerSubject, ILoggerObserver } from "@yellow/Interfaces/Logger";
+import { injectable } from "inversify";
 
+@injectable()
 export abstract class AbstractLogger implements ILoggerObserver {
   protected subject: ILoggerSubject;
 

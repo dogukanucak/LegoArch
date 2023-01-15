@@ -1,12 +1,10 @@
 import { NetworkErrorHandler } from "@green/Services/ErrorHandlers/NetworkErrorHandler/NetworkErrorHandler";
-import { AxiosAdapter } from "@green/Services/Http/Adapters/Axios/AxiosAdapter";
-import { RxJsAdapter } from "@green/Services/Http/Adapters/RxJSAdapter/RxJsAdapter";
-import { HttpClient } from "@green/Services/Http/HttpClient";
 import { ConsoleLogger } from "@green/Services/Logger/ConsoleLogger";
-import { FileLogger } from "@green/Services/Logger/FileLogger";
+import { HTTP_TOKENS } from "@red/IoC/Tokens/Http.token";
+import DI_CONTAINER from "@red/IoC/di.container";
 import { LogLevel } from "@red/Types/Logger/LogType";
 import { Logger } from "@yellow/Abstractions/Logger/Logger";
-import { HttpRequestConfig, HttpResponse, IHttpMiddleware } from "@yellow/Interfaces/Http";
+import { HttpRequestConfig, HttpResponse, IHttpClient, IHttpMiddleware } from "@yellow/Interfaces/Http";
 import { HttpMethod } from "@yellow/Interfaces/Http/enums/HttpMethod.enum";
 import * as React from "react";
 
@@ -24,10 +22,11 @@ class TestMiddleWare implements IHttpMiddleware {
 const testHTTPClient = () => {
   const handler = new NetworkErrorHandler();
 
-  const httpClient = new HttpClient(new RxJsAdapter());
+  const httpClient = DI_CONTAINER.get<IHttpClient>(HTTP_TOKENS.HttpClient);
+
   const config: HttpRequestConfig = {
     method: HttpMethod.GET,
-    url: "https://jsonplaceholder.typicode.com/todosError/1",
+    url: "https://jsonplaceholder.typicode.com/todos/1",
   };
 
   httpClient.useMiddleware(new TestMiddleWare());
@@ -45,13 +44,14 @@ const testHTTPClient = () => {
 
 const testLogger = () => {
   const logSubject = new Logger();
-  logSubject.attach(new ConsoleLogger());
-  logSubject.attach(new FileLogger(""));
+  const consoleLogger = DI_CONTAINER.get<ConsoleLogger>("ConsoleLogger");
+  logSubject.attach(consoleLogger);
 
   logSubject.write({ level: LogLevel.ERROR, message: "HEY TEST THIS LOG MESSAGE" });
 };
 
 const App: React.FC = () => {
+  testHTTPClient();
   return (
     <div>
       <h1>Hello World!</h1>
