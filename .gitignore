@@ -92,3 +92,6 @@ Thumbs.db
 
 # package lock
 package-lock.json
+
+# TypeScriptBlackBoard
+TypeScriptBlackBoard

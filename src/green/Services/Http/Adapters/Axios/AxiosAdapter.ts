@@ -13,7 +13,7 @@ export class AxiosAdapter implements IHttpAdapter {
       data: axiosResponse.data,
       status: axiosResponse.status,
       statusText: axiosResponse.statusText,
-      headers: axiosResponse.headers,
+      headers: axiosResponse.headers as any,
       config: axiosConfigMapper(axiosResponse.config),
     };
   }

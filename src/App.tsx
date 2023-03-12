@@ -50,7 +50,17 @@ const testLogger = () => {
   logSubject.write({ level: LogLevel.ERROR, message: "HEY TEST THIS LOG MESSAGE" });
 };
 
+const test = async () => {
+  const ProductApp = await import("PRODUCT");
+  console.log("PRO: ", ProductApp);
+};
+
 const App: React.FC = () => {
+  test()
+    .then((response) => {})
+    .catch((error) => {
+      console.log("Errror:", error);
+    });
   testHTTPClient();
   return (
     <div>

@@ -3,6 +3,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -34,6 +35,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "src/index.html",
+    }),
+    new ModuleFederationPlugin({
+      name: "SHELL",
+      filename: "remoteEntry.js",
+      remotes: {
+        PRODUCT: "PRODUCT@http://localhost:9001/remoteEntry.js",
+      },
     }),
   ],
   devServer: {
