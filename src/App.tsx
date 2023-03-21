@@ -51,13 +51,15 @@ const testLogger = () => {
 };
 
 const test = async () => {
-  const ProductApp = await import("PRODUCT");
-  console.log("PRO: ", ProductApp);
+  const { RemoteApp } = await import("PRODUCT/RemoteApp");
+  console.log("Remote App: ", new RemoteApp());
 };
 
 const App: React.FC = () => {
   test()
-    .then((response) => {})
+    .then((response) => {
+      console.log("Response: ", response);
+    })
     .catch((error) => {
       console.log("Errror:", error);
     });
