@@ -8,6 +8,14 @@ import { HttpRequestConfig, HttpResponse, IHttpClient, IHttpMiddleware } from "@
 import { HttpMethod } from "@yellow/Interfaces/Http/enums/HttpMethod.enum";
 import * as React from "react";
 
+/**
+ * Test Middleware for HTTP Client to test the middleware functionality
+ * @class TestMiddleWare - Test Middleware for HTTP Client
+ * @implements {IHttpMiddleware} - Interface for HTTP Middleware
+ * @template T - Type of data to be sent in the request
+ * @template R - Type of data to be received in the response
+ * @template E - Type of error to be received in the response
+ */
 class TestMiddleWare implements IHttpMiddleware {
   handleRequest(config: HttpRequestConfig<string | object>): Promise<HttpRequestConfig<string | object>> {
     console.log("Can handle request!");
@@ -72,3 +80,8 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+// generate random number
+const random = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
