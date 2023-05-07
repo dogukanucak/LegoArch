@@ -1,4 +1,4 @@
-import { IErrorHandler } from "@yellow/Interfaces/Error/IErrorHandler";
+import { IErrorHandler } from "@yellow/Contracts//Error/IErrorHandler";
 import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
 import { hasErrorType } from "@yellow/Utility/ErrorUtilities/error.utility";
 import { NetworkErrorHandlerConstants } from "./constants";

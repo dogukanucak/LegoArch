@@ -1,8 +1,8 @@
-import { RxJsAdapter } from "@green/Services/Http/Adapters/RxJSAdapter/RxJsAdapter";
-import { HttpClient } from "@green/Services/Http/HttpClient";
-import { ConsoleLogger } from "@green/Services/Logger/ConsoleLogger";
+import { ConsoleLogger } from "@blue/Services/Logger/ConsoleLogger";
 import { HTTP_TOKENS } from "@red/IoC/Tokens/Http.token";
 import DI_CONTAINER from "@red/IoC/di.container";
+import { HttpClient } from "@green/Services/Http/HttpClient";
+import { RxJsAdapter } from "@blue/Services/Http/Adapters/RxJSAdapter/RxJsAdapter";
 
 class AppInjector {
   inject(): void {

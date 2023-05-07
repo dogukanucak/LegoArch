@@ -1,13 +1,12 @@
 import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
-import { IErrorHandler } from "@yellow/Interfaces/Error/IErrorHandler";
-import { NetworkErrorHandler } from "./NetworkErrorHandler";
-import { NetworkErrorHandlerConstants } from "./constants";
+import { UIErrorHandler } from "./UIErrorHandler";
+import { IErrorHandler } from "@yellow/Contracts/Error/IErrorHandler";
 
 const mockHandleErrorMethod = jest.fn();
 
 // Arrange
 const error: TypedError = {
-  types: [ErrorType.NetworkError],
+  types: [ErrorType.UIError],
   message: "An error occurred in the user interface",
 };
 
@@ -20,27 +19,27 @@ class MockTestErrorHandler implements IErrorHandler {
   }
 }
 
-describe("NetworkErrorHandler", () => {
+describe("UIErrorHandler", () => {
   it("should log error to console", () => {
-    const networkErrorHandler = new NetworkErrorHandler();
+    const uiErrorHandler = new UIErrorHandler();
 
     const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => {
       return;
     });
 
     // Act
-    networkErrorHandler.handleError(error);
+    uiErrorHandler.handleError(error);
 
     // Assert
-    expect(consoleSpy).toHaveBeenCalledWith(NetworkErrorHandlerConstants.DefaultErrorMessage);
+    expect(consoleSpy).toHaveBeenCalledWith(error.message);
   });
 
   it("should call next handler", () => {
-    const networkErrorHandler = new NetworkErrorHandler();
-    networkErrorHandler.setNext(new MockTestErrorHandler());
+    const uiErrorHandler = new UIErrorHandler();
+    uiErrorHandler.setNext(new MockTestErrorHandler());
 
     // Act
-    networkErrorHandler.handleError(error);
+    uiErrorHandler.handleError(error);
 
     // Assert
     expect(mockHandleErrorMethod).toHaveBeenCalledTimes(1);

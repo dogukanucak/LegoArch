@@ -1,6 +1,6 @@
-import { ILoggerSubject } from "@yellow/Interfaces/Logger";
-import { AbstractLogger } from "./AbstractLogger";
-import { Log } from "@red/Types/Logger/LogType";
+import { Log } from "@red/Types/Log/LogType";
+import { ILoggerSubject } from "@yellow/Contracts//Logger";
+import { AbstractLogger } from "@green/Services/BaseLogger/AbstractLogger";
 
 export class Logger implements ILoggerSubject {
   private observers: AbstractLogger[] = [];

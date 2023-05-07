@@ -1,4 +1,4 @@
-import { IStorage } from "@yellow/Interfaces/Storage/IStorage";
+import { IStorage } from "@yellow/Contracts/Storage/IStorage";
 
 export class LocalStorage implements IStorage {
   set(key: string, value: string | object): void {

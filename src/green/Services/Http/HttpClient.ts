@@ -1,5 +1,5 @@
 import { HTTP_TOKENS } from "@red/IoC/Tokens/Http.token";
-import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpClient, IHttpMiddleware } from "@yellow/Interfaces/Http";
+import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpClient, IHttpMiddleware } from "@yellow/Contracts/Http";
 import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
 import { inject, injectable } from "inversify";
 

@@ -1,0 +1,68 @@
+@startuml
+!define LEGO_WHITE #F2F3F4
+!define LEGO_BLUE #3A7CEC
+!define LEGO_RED #DA1E28
+!define LEGO_YELLOW #FDB813
+!define LEGO_GREEN #009E60
+
+title Colored Lego Architecture
+
+package "App" {
+  [App] -> [Header]
+  [App] -> [Footer]
+  [App] -> [Main]  
+}
+
+package "Header" {
+  [Header] -> [Logo]
+  [Header] -> [Navigation]
+}
+
+package "Main" {
+  [Main] -> [ProductList]
+  [Main] -> [Filter]
+}
+
+package "Footer" {
+  [Footer] -> [ContactUs]
+  [Footer] -> [SocialMedia]
+}
+
+package "ProductList" {
+  [ProductList] -> [Product]
+  [ProductList] -> [Product]
+  [ProductList] -> [Product]
+}
+
+[Filter] -> [ColorPicker]
+[Filter] -> [SizePicker]
+
+[Product] -> [ColorPicker]
+[Product] -> [SizePicker]
+[Product] -> [AddToCart]
+
+[ContactUs] -> [EmailForm]
+[ContactUs] -> [PhoneNo]
+
+[SocialMedia] -> [Facebook]
+[SocialMedia] -> [Twitter]
+[SocialMedia] -> [Instagram]
+
+[ColorPicker] --> "LEGO_YELLOW" as yellow
+[ColorPicker] --> "LEGO_BLUE" as blue
+[ColorPicker] --> "LEGO_RED" as red
+[ColorPicker] --> "LEGO_GREEN" as green
+[SizePicker] --> "1x1" as onebyone
+[SizePicker] --> "2x2" as twobytwo
+[SizePicker] --> "4x4" as fourbyfour
+
+yellow ..> [Product]
+blue ..> [Product]
+red ..> [Product]
+green ..> [Product]
+
+onebyone ..> [Product]
+twobytwo ..> [Product]
+fourbyfour ..> [Product]
+
+@enduml

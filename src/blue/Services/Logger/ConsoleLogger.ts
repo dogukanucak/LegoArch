@@ -1,5 +1,5 @@
-import { Log } from "@red/Types/Logger/LogType";
-import { AbstractLogger } from "@yellow/Abstractions/Logger/AbstractLogger";
+import { Log } from "@red/Types/Log/LogType";
+import { AbstractLogger } from "@green/Services/BaseLogger/AbstractLogger";
 import { injectable } from "inversify/lib/annotation/injectable";
 
 @injectable()
