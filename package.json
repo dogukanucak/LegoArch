@@ -8,7 +8,8 @@
     "format": "prettier --write 'src/**/*.{ts,js}'",
     "lint": "eslint 'src/**/*.{ts,js}'",
     "test": "jest",
-    "watch": "webpack --config webpack.config.js --watch"
+    "watch": "webpack --config webpack.config.js --watch",
+    "fake-server": "node FakeServer/server.js"
   },
   "dependencies": {
     "inversify": "^6.0.1",
@@ -19,8 +20,8 @@
     "rxjs": "^7.8.0"
   },
   "devDependencies": {
-    "@types/react": "18.0.32",
     "@types/jest": "^29.2.5",
+    "@types/react": "18.0.32",
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.30.0",
@@ -28,6 +29,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^29.3.1",
+    "json-server": "^0.17.3",
     "prettier": "^2.8.1",
     "ts-jest": "^29.0.3",
     "ts-loader": "^9.4.2",

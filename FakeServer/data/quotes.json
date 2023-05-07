@@ -1,0 +1,162 @@
+{
+  "quotes": [
+    { "id": 1, "quote": "Why do programmers prefer dark mode? Because light attracts bugs.", "author": "Anonymous" },
+    { "id": 2, "quote": "I'm not lazy, I'm just on my coffee break.", "author": "Anonymous" },
+    {
+      "id": 3,
+      "quote": "Debugging is like being the detective in a crime movie where you're also the murderer.",
+      "author": "Filipe Fortes"
+    },
+    {
+      "id": 4,
+      "quote": "There are only 10 types of people in the world: those who understand binary and those who don't.",
+      "author": "Anonymous"
+    },
+    {
+      "id": 5,
+      "quote": "Why do programmers always mix up Christmas and Halloween? Because Oct 31 == Dec 25!",
+      "author": "Anonymous"
+    },
+    { "id": 6, "quote": "I don't always test my code, but when I do, I do it in production.", "author": "Anonymous" },
+    { "id": 7, "quote": "Knock, knock. Race condition. Who's there?", "author": "Anonymous" },
+    { "id": 8, "quote": "I have a joke on programming, but it only works on my machine.", "author": "Anonymous" },
+    {
+      "id": 9,
+      "quote": "Why do programmers prefer dark mode? Because light mode is for Sith Lords.",
+      "author": "Unknown"
+    },
+    { "id": 10, "quote": "There's no place like 127.0.0.1.", "author": "Anonymous" },
+    { "id": 11, "quote": "Why did the programmer go broke? Because he lost his domain in a bet.", "author": "Unknown" },
+    {
+      "id": 12,
+      "quote": "Why do programmers prefer iOS development? Because it's a byte-sized opportunity.",
+      "author": "Unknown"
+    },
+    {
+      "id": 13,
+      "quote": "A SQL query walks into a bar, walks up to two tables, and asks... 'Can I join you?'",
+      "author": "Unknown"
+    },
+    {
+      "id": 14,
+      "quote": "Why did the developer go broke? Because he couldn't find a back-end to support him.",
+      "author": "Unknown"
+    },
+    {
+      "id": 15,
+      "quote": "Why do programmers always mix up Christmas and Halloween? Because Oct 31 == Dec 25!",
+      "author": "Anonymous"
+    },
+    { "id": 16, "quote": "Why do programmers prefer dark mode? Because light attracts bugs.", "author": "Anonymous" },
+    { "id": 17, "quote": "I'm not lazy, I'm just on my coffee break.", "author": "Anonymous" },
+    {
+      "id": 18,
+      "quote": "Debugging is like being the detective in a crime movie where you're also the murderer.",
+      "author": "Filipe Fortes"
+    },
+    {
+      "id": 19,
+      "quote": "There are only 10 types of people in the world: those who understand binary and those who don't.",
+      "author": "Anonymous"
+    },
+    { "id": 20, "quote": "I don't always test my code, but when I do, I do it in production.", "author": "Anonymous" },
+    { "id": 21, "quote": "Knock, knock. Race condition. Who's there?", "author": "Anonymous" },
+    { "id": 22, "quote": "I have a joke on programming, but it only works on my local" },
+    {
+      "id": 23,
+      "quote": "Why do JavaScript developers prefer dark mode? Because they like to code with a dark sense of humor.",
+      "author": "Unknown"
+    },
+    { "id": 24, "quote": "There's no place like 127.0.0.1 when you're a JavaScript developer.", "author": "Anonymous" },
+    {
+      "id": 25,
+      "quote": "Why did the JavaScript function go broke? Because it lost its context.",
+      "author": "Unknown"
+    },
+    {
+      "id": 26,
+      "quote": "Why do JavaScript developers prefer async/await? Because they enjoy the suspense.",
+      "author": "Unknown"
+    },
+    {
+      "id": 27,
+      "quote": "A JavaScript function walks into a bar, walks up to 'undefined' and asks... 'Can I bind you?'",
+      "author": "Unknown"
+    },
+    {
+      "id": 28,
+      "quote": "Why do JavaScript developers prefer arrow functions? Because they never lose their 'this'.",
+      "author": "Unknown"
+    },
+    {
+      "id": 29,
+      "quote": "I asked the JavaScript interpreter why I had a TypeError. It replied, 'You're not my type.'",
+      "author": "Unknown"
+    },
+    {
+      "id": 30,
+      "quote": "Why do JavaScript developers prefer coffee? Because it helps them handle all the Java errors.",
+      "author": "Unknown"
+    },
+    {
+      "id": 31,
+      "quote": "I'm not lazy, I'm just using JavaScript's 'setTimeout' to delay the inevitable.",
+      "author": "Anonymous"
+    },
+    {
+      "id": 32,
+      "quote": "Why did the JavaScript developer get lost? Because they couldn't find their way through the 'callback hell'.",
+      "author": "Unknown"
+    },
+    {
+      "id": 33,
+      "quote": "Why do JavaScript developers always mix up dates? Because they can't stop `new Date()`-ing.",
+      "author": "Unknown"
+    },
+    {
+      "id": 34,
+      "quote": "I used to be a Java developer, but I couldn't handle the 'NullPointerExceptions'. Now I'm a JavaScript developer, and I still can't handle the 'undefined'.",
+      "author": "Unknown"
+    },
+    {
+      "id": 35,
+      "quote": "Why do JavaScript developers prefer functional programming? Because they don't like to share state secrets.",
+      "author": "Unknown"
+    },
+    {
+      "id": 36,
+      "quote": "A JavaScript variable walks into a function bar and asks for a drink. The bartender says, 'Undefined'. The variable replies, 'Not a problem, I'm flexible.'",
+      "author": "Unknown"
+    },
+    {
+      "id": 37,
+      "quote": "Why do JavaScript developers prefer JSON? Because they enjoy exchanging objects with strangers.",
+      "author": "Unknown"
+    },
+    {
+      "id": 38,
+      "quote": "I don't always code in JavaScript, but when I do, I prefer arrow functions.",
+      "author": "Anonymous"
+    },
+    {
+      "id": 39,
+      "quote": "Why do JavaScript developers prefer coding at night? Because the dreams they encounter during sleep mode inspire their code.",
+      "author": "Unknown"
+    },
+    {
+      "id": 40,
+      "quote": "Why did the JavaScript developer quit their job? They didn't get 'prototype' clearance.",
+      "author": "Unknown"
+    },
+    {
+      "id": 41,
+      "quote": "I asked JavaScript why it was single-threaded. It replied, 'I'm waiting for my promises to be fulfilled.'",
+      "author": "Unknown"
+    },
+    {
+      "id": 42,
+      "quote": "Why do JavaScript developers prefer to work alone? Because they don't like anyone meddling with",
+      "author": "Unknown"
+    }
+  ]
+}
