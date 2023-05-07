@@ -18,10 +18,10 @@ The Lego and color architecture is based on the following principles:
 
 The Lego and color architecture uses a folder structure that is based on colors, with the following conventions:
 
-- **Red**: Dependency container (cannot be changed)
-- **Yellow**: Interfaces (hardly changed)
-- **Green**: Services (can be changed, but will affect the whole app)
-- **Blue**: Modules (can be easily replaced or modified)
+- **Red**: Dependency container && Business (cannot be changed)
+- **Yellow**: Contacts (hardly changed - contains how application consume services)
+- **Green**: Base Services (can be changed, but will affect the whole app)
+- **Blue**: Concrete Implementations (can be easily replaced or modified)
 
 Each color corresponds to a specific level of abstraction, with red representing the core dependencies of the application, yellow representing the interfaces that define the contracts between different parts of the application, green representing the services that implement the core business logic of the application, and blue representing the modules that consume these services and provide the user-facing functionality of the application.
 
