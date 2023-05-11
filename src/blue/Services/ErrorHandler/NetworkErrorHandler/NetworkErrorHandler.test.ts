@@ -1,5 +1,5 @@
 import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
-import { IErrorHandler } from "@yellow/Contracts/Error/IErrorHandler";
+import { IErrorHandler } from "@red/Contracts/Error/IErrorHandler";
 import { NetworkErrorHandler } from "./NetworkErrorHandler";
 import { NetworkErrorHandlerConstants } from "./constants";
 

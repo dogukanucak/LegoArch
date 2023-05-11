@@ -1,5 +1,5 @@
 import { Log } from "@red/Types/Log/LogType";
-import { ILoggerSubject, ILoggerObserver } from "@yellow/Contracts//Logger";
+import { ILoggerSubject, ILoggerObserver } from "@red/Contracts//Logger";
 import { injectable } from "inversify";
 
 @injectable()

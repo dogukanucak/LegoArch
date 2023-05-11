@@ -1,8 +1,8 @@
 import { ErrorType } from "@yellow/Types/ErrorTypes/error.type";
 
-import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpMiddleware } from "@yellow/Contracts/Http";
+import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpMiddleware } from "@red/Contracts/Http";
 import { HttpClient } from "./HttpClient";
-import { HttpMethod } from "@yellow/Contracts/Http/enums/HttpMethod.enum";
+import { HttpMethod } from "@red/Contracts/Http/enums/HttpMethod.enum";
 
 const mockRequestConfig: HttpRequestConfig = { url: "mockURL", method: HttpMethod.GET };
 

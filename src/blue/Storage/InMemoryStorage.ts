@@ -1,4 +1,4 @@
-import { IStorage } from "@yellow/Contracts/Storage/IStorage";
+import { IStorage } from "@red/Contracts/Storage/IStorage";
 
 export class InMemoryStorage implements IStorage {
   private storage: { [key: string]: string | object } = {};

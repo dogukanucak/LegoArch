@@ -1,5 +1,5 @@
 import { Log } from "@red/Types/Log/LogType";
-import { ILoggerSubject } from "@yellow/Contracts//Logger";
+import { ILoggerSubject } from "@red/Contracts//Logger";
 import { AbstractLogger } from "@green/Services/BaseLogger/AbstractLogger";
 
 export class Logger implements ILoggerSubject {

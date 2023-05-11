@@ -1,4 +1,4 @@
-import { HttpRequestConfig, HttpResponse, IHttpAdapter } from "@yellow/Contracts/Http";
+import { HttpRequestConfig, HttpResponse, IHttpAdapter } from "@red/Contracts/Http";
 import { injectable } from "inversify";
 import { Observable, firstValueFrom } from "rxjs";
 import { AjaxConfig, ajax } from "rxjs/ajax";
