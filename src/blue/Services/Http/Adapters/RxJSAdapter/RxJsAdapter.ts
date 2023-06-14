@@ -6,7 +6,7 @@ import { map } from "rxjs/operators";
 
 @injectable()
 export class RxJsAdapter implements IHttpAdapter {
-  request<T = string | object>(config: HttpRequestConfig<string | object>): Promise<HttpResponse<T>> {
+  request<REQ = object, RES = object>(config: HttpRequestConfig<REQ>): Promise<HttpResponse<RES>> {
     const ajaxConfig: AjaxConfig = {
       url: config.url,
       body: config.data,
@@ -15,9 +15,9 @@ export class RxJsAdapter implements IHttpAdapter {
       withCredentials: config.withCredentials,
     };
 
-    const ajaxObservable: Observable<HttpResponse<T>> = ajax<T>(ajaxConfig).pipe(
+    const ajaxObservable: Observable<HttpResponse<RES>> = ajax<RES>(ajaxConfig).pipe(
       map((response) => {
-        const httpResponse: HttpResponse<T> = {
+        const httpResponse: HttpResponse<RES> = {
           data: response.response,
           status: response.status,
           statusText: response.xhr.statusText,

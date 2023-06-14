@@ -1,33 +1,28 @@
 import { QuoteService } from "@red/BusinessServices/QuoteService/quote.service";
 import { HTTP_TOKENS } from "@red/IoC/Tokens/Http.token";
 import DI_CONTAINER from "@red/IoC/di.container";
-import { HttpRequestConfig, HttpResponse, IHttpClient, IHttpMiddleware } from "@red/Contracts/Http";
+import { IHttpClient } from "@red/Contracts/Http";
 import React from "react";
-
-class ConsoleLoggerMiddleware implements IHttpMiddleware {
-  handleRequest(config: HttpRequestConfig<string | object>): Promise<HttpRequestConfig<string | object>> {
-    console.log("Can handle request!");
-    return Promise.resolve(config);
-  }
-  handleResponse(response: HttpResponse<string | object>): Promise<HttpResponse<string | object>> {
-    console.log("Can handle response: ", response.data);
-    return Promise.resolve(response);
-  }
-}
-
-function getQuotes() {
-  const httpClient = DI_CONTAINER.get<IHttpClient>(HTTP_TOKENS.HttpClient);
-
-  httpClient.useMiddleware(new ConsoleLoggerMiddleware());
-
-  const quoteService = new QuoteService(httpClient);
-  quoteService.getQuote();
-}
+import { QUOTE_ENDPOINT } from "@red/ApplicationConstants/Integration/server.config";
+import { HttpMethod } from "@red/Contracts/Http/enums/HttpMethod.enum";
+import useFetch from "@red/Hooks/useFetch.hook";
+import { Quote } from "@red/Types/Quote/quote.type";
 
 const App: React.FC = () => {
+  const { data, loading, error } = useFetch<any, Quote>({ method: HttpMethod.GET, url: QUOTE_ENDPOINT });
+
+  const getQuotes = async () => {
+    // const httpClient = DI_CONTAINER.get<IHttpClient>(HTTP_TOKENS.HttpClient);
+    // const quoteService = new QuoteService(httpClient);
+    // setQuotes((await quoteService.getQuote()).quote);
+  };
+
+  if (loading) return <div>Loading...</div>;
+
   return (
     <>
       <h1>Welcome To Quote App</h1>
+      <p>{data.quote}</p>
       <button onClick={getQuotes}>Get Quotes</button>
     </>
   );

@@ -8,7 +8,7 @@ class AppInjector {
   inject(): void {
     DI_CONTAINER.bind("ConsoleLogger").to(ConsoleLogger);
 
-    DI_CONTAINER.bind(HTTP_TOKENS.HttpClient).to(HttpClient);
+    DI_CONTAINER.bind(HTTP_TOKENS.HttpClient).to(HttpClient).inSingletonScope();
     DI_CONTAINER.bind(HTTP_TOKENS.HttpAdapter).to(RxJsAdapter);
   }
 }

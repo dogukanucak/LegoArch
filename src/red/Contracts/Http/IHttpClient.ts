@@ -5,5 +5,8 @@ import { IHttpMiddleware } from "./IHttpMiddleware";
 // yellow folder
 export interface IHttpClient {
   useMiddleware(middleware: IHttpMiddleware): IHttpClient;
-  request(config: HttpRequestConfig): Promise<HttpResponse>;
+  request<REQ = object, RES = object>(
+    config: HttpRequestConfig<REQ>,
+    withMiddlewares?: IHttpMiddleware[],
+  ): Promise<HttpResponse<RES>>;
 }

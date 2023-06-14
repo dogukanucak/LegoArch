@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { HTTP_TOKENS } from "@red/IoC/Tokens/Http.token";
 import { HttpRequestConfig, HttpResponse, IHttpAdapter, IHttpClient, IHttpMiddleware } from "@red/Contracts/Http";
 import { ErrorType, TypedError } from "@yellow/Types/ErrorTypes/error.type";
@@ -18,18 +19,18 @@ export class HttpClient implements IHttpClient {
     return this;
   }
 
-  public async request(config: HttpRequestConfig): Promise<HttpResponse> {
+  public async request<REQ, RES>(config: HttpRequestConfig<REQ>, withMiddlewares: IHttpMiddleware[] = []): Promise<HttpResponse<RES>> {
     try {
       // Apply request middlewares
-      for (const middleware of this.middlewares) {
+      for (const middleware of [...this.middlewares, ...withMiddlewares]) {
         config = await middleware.handleRequest(config);
       }
 
       // Send request
-      let response = await this.adapter.request(config);
+      let response = await this.adapter.request<REQ, RES>(config);
 
       // Apply response middlewares
-      for (const middleware of this.middlewares) {
+      for (const middleware of [...this.middlewares, ...withMiddlewares]) {
         response = await middleware.handleResponse(response);
       }
 
